@@ -39,6 +39,7 @@ export default function BlogList() {
         {visible.map((post, i) => (
           <motion.div
             key={post.id}
+            className="flex"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: (i % PAGE_SIZE) * 0.05 }}

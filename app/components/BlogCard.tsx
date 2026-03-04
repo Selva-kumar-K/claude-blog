@@ -4,10 +4,10 @@ import { Post } from "../data/posts";
 
 export default function BlogCard({ post }: { post: Post }) {
   return (
-    <Link href={`/blog/${post.slug}`} className="group block">
-      <div className="overflow-hidden rounded-2xl border border-zinc-100 bg-white shadow-sm transition-shadow hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900">
+    <Link href={`/blog/${post.slug}`} className="group flex h-full">
+      <div className="flex h-full w-full flex-col overflow-hidden rounded-2xl border border-zinc-100 bg-white shadow-sm transition-shadow hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900">
         {/* Cover Image */}
-        <div className="relative h-48 w-full overflow-hidden">
+        <div className="relative h-48 w-full flex-shrink-0 overflow-hidden">
           <Image
             src={post.coverImage}
             alt={post.title}
@@ -17,7 +17,7 @@ export default function BlogCard({ post }: { post: Post }) {
         </div>
 
         {/* Content */}
-        <div className="flex flex-col gap-3 p-5">
+        <div className="flex flex-1 flex-col gap-3 p-5">
           {/* Tags */}
           <div className="flex flex-wrap gap-2">
             {post.tags.map((tag) => (
@@ -36,7 +36,7 @@ export default function BlogCard({ post }: { post: Post }) {
           </h2>
 
           {/* Excerpt */}
-          <p className="line-clamp-2 text-sm text-zinc-500 dark:text-zinc-400">
+          <p className="line-clamp-2 flex-1 text-sm text-zinc-500 dark:text-zinc-400">
             {post.excerpt}
           </p>
 
